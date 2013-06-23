@@ -38,14 +38,14 @@ The names may vary between different drivers, to lookup your resolution run `xra
 
 ### Modes
 
-    first[1]        use first screen only
-    second[2]       use second screen only
+    first[f]        use first screen only
+    second[s]       use second screen only
     clone[c]        clone the internal screen
     extendl[l]      extends the connected monitor to the left  of the internal one
     extendr[r]      extends the connected monitor to the right of the internal one
     modes[m]        display all possible screen resolutions of all connected screens
 
-By default internal is primary, change this with the primary flag
+By default the first display is primary, change this with the primary flag
 
 # Examples 
  

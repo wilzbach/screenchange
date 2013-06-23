@@ -15,14 +15,14 @@ Options
   -p|--primary    swaps the primary screen (default is the FIRSTal)
 
 Modes:
-  first[1]        use first screen only
-  second[2]       use second screen only
+  first[f]        use first screen only
+  second[s]       use second screen only
   clone[c]        clone the FIRSTal screen
   extendl[l]      extends the connected monitor to the left  of the FIRSTal one
   extendr[r]      extends the connected monitor to the right of the FIRSTal one
   modes[m]        display all possible screen resolutions of all connected screens
 
-By default FIRSTal is primary, change this with the primary flag
+By default the first display is primary, change this with the primary flag
 
 EOI
 exit 1
@@ -123,10 +123,6 @@ if [ "$MODE" != "m" ] && [ "$MODE" != "mode" ]; then
 fi
 
 
-echo $FIRST
-echo $SECOND
-echo $MODE
-
 if [ -z "$MODE" ]; then
         error "ERROR: No mode specified"
 	PrintUsage
@@ -149,18 +145,20 @@ fi
 
 ######################################################################
 # Main
+#####################################################################
+
 case $MODE in
   modes|m)
     xrandr -q
     ;;
-  first|1)
+  first|f)
     $(xrandr --output "$FIRST" --auto --output "$SECOND" --off)
     printf "$(pass $FIRST)"
     printf  "\t-> on \n"
     printf "$(pass $SECOND)"
     printf  "\t-> off \n"
     ;;
-  second|2)
+  second|s)
     xrandr --output "$FIRST" --off --output "$SECOND" --auto
     printf "$(pass $FIRST)"
     printf  "\t-> off \n"
