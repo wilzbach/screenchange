@@ -50,9 +50,10 @@ By default the first display is primary, change this with the primary flag
 # Examples 
  
     what             with aliases    without aliases + long names
-    HDMI1* | LVDS1   hdmi  l          screenchange --first HDMI1 --second LVDS1 --mode extendl
-    HDMI1  | VGA1*   vga2  r          screenchange --first VGA1  --second HDMI1 --mode extendr
-    VGA1   | HDMI1*  vga2  l          screenchange --first VGA1  --second HDMI1 --mode extendl
-    HDMI             hdmi  i          screenchange --first HDMI1 --second LVDS1 --mode internal
+    HDMI1* | LVDS1   hdmi l          screenchange --first HDMI1 --second LVDS1 --mode extendl
+    HDMI1  | VGA1*   vga2 r          screenchange --first VGA1  --second HDMI1 --mode extendr
+    VGA1   | HDMI1*  vga2 l          screenchange --first VGA1  --second HDMI1 --mode extendl
+    HDMI             hdmi i          screenchange --first HDMI1 --second LVDS1 --mode internal
+    HDMI1 = VGA1     hdmi c          screenchange --first HDMI1 --second VGA1  --mode clone
 
 ## Have fun & save time
