@@ -1,10 +1,8 @@
-#Hello
+#Simplify the access to the screen resolution
 
 ## Description
 
-Simply access.
-
-    aaa
+If you're working on a laptop and have to change your screen configurations very often this script is for you. It also to set all common options with remembering the complex structure of xrandr. Therefore it's just a simple bash script, but it saves a lot of time ;-)
     
 ## Install
 
@@ -17,10 +15,10 @@ Simply access.
 
 ## 
     alias monitor-off='xrandr --output VGA1 --off;xrandr --output HDMI1 --off'
-    alias hdmi='screenchange -i HDMI1 -e LVDS1 -m'
-    alias vga='screenchange -i VGA1 -e LVDS1 -m'
-    alias hdmi2='screenchange -i HDMI1 -e VGA1 -m'
-    alias vga2='screenchange -i VGA1 -e HDMI1 -m'
+    alias hdmi='screenchange -1 HDMI1 -2 LVDS1 -m'
+    alias vga='screenchange -1 VGA1 -2 LVDS1 -m'
+    alias hdmi2='screenchange -1 HDMI1 -2 VGA1 -m'
+    alias vga2='screenchange -1 VGA1 -2 HDMI1 -m'
 
 (2 stands for two connected monitors)
 
@@ -29,19 +27,19 @@ The names may vary between different drivers, to lookup your resolution run `xra
 
 ## Usage
 
-    screenchange [OPTONS] InternalDisplay ExternalDisplay
+    screenchange [OPTIONS] FirstDisplay SecondDisplay
 
 ### Options
 
-    -m|--mode       sets the mode (see below)
-    -i|--internal   sets the internal screen (has priority before input)
-    -e|--external   sets the external screen (has priority before input)
+    -m|--mode	  sets the mode (see below)
+    -1|--first	  sets the internal screen (has priority before input)
+    -2|--second     sets the external screen (has priority before input)
     -p|--primary    swaps the primary screen (default is the internal)
 
 ### Modes
 
-    internal[i]     use internal screen only
-    external[e]     use external screen only
+    first[1]        use first screen only
+    second[2]       use second screen only
     clone[c]        clone the internal screen
     extendl[l]      extends the connected monitor to the left  of the internal one
     extendr[r]      extends the connected monitor to the right of the internal one
@@ -52,9 +50,9 @@ By default internal is primary, change this with the primary flag
 # Examples 
  
 what             with aliases    without aliases + long names
-HDMI1* | LVDS1   hdmi l          screenchange --internal HDMI1 --external LVDS1 --mode extendl
-HDMI1* | VGA1    hdmi2l          screenchange --internal HDMI1 --external VGA1  --mode extendl
-VGA1   | HDMI1*  vga2 l          screenchange --internal VGA1  --external HDMI1 --mode extendl
-HDMI             hdmi i          screenchange --internal HDMI1 --external LVDS1 --mode internal
+HDMI1* | LVDS1   hdmi l          screenchange --first HDMI1 --second LVDS1 --mode extendl
+HDMI1* | VGA1    hdmi2l          screenchange --first HDMI1 --second VGA1  --mode extendl
+VGA1   | HDMI1*  vga2 l          screenchange --first VGA1  --second HDMI1 --mode extendl
+HDMI             hdmi i          screenchange --first HDMI1 --second LVDS1 --mode internal
 
 ## Have fun & save time
