@@ -10,16 +10,16 @@ Usage:
 
 Options
   -m|--mode	  sets the mode (see below)
-  -1|--first	  sets the FIRSTal screen (has priority before input)
-  -2|--second     sets the SECONDal screen (has priority before input)
-  -p|--primary    swaps the primary screen (default is the FIRSTal)
+  -1|--first	  sets the FIRST screen (has priority before input)
+  -2|--second     sets the SECOND screen (has priority before input)
+  -p|--primary    swaps the primary screen (default is the FIRST)
 
 Modes:
   first[f]        use first screen only
   second[s]       use second screen only
-  clone[c]        clone the FIRSTal screen
-  extendl[l]      extends the connected monitor to the left  of the FIRSTal one
-  extendr[r]      extends the connected monitor to the right of the FIRSTal one
+  clone[c]        clone the FIRST screen
+  extendl[l]      extends the connected monitor to the left  of the FIRST one
+  extendr[r]      extends the connected monitor to the right of the FIRST one
   modes[m]        display all possible screen resolutions of all connected screens
 
 By default the first display is primary, change this with the primary flag
