@@ -32,8 +32,8 @@ The names may vary between different drivers, to lookup your resolution run `xra
 ### Options
 
     -m|--mode	  sets the mode (see below)
-    -1|--first	  sets the internal screen (has priority before input)
-    -2|--second     sets the external screen (has priority before input)
+    -1|--first	  sets the first screen (has priority before input)
+    -2|--second     sets the second screen (has priority before input)
     -p|--primary    swaps the primary screen (default is the internal)
 
 ### Modes
