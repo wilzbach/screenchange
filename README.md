@@ -1,17 +1,38 @@
-#Simplify the access to the screen resolution
+Simplify the access to the screen settings
+============================================
 
 ## Description
 
-If you're working on a laptop and have to change your screen configurations very often this script is for you. It also to set all common options with remembering the complex structure of xrandr. Therefore it's just a simple bash script, but it saves a lot of time ;-)
+If you're working on a laptop and have to change your screen configurations very often this script is for you.
+The idea is to have intuitive interface compared to xrandr.
+So basically it is just a neat wrapper around `xrandr`.
     
 ## Install
 
+a) Use the [Arch package](https://aur.archlinux.org/packages/screenchange-git/)
+
+b) Manually
+
 1. Clone the bash file
 2. source it (multiple ways)
-    * create a symbolic link to it (example is for debian based distributions) `sudo ln -s /home/xsebi/gcode/tools/bash/screenchange/screenchange.sh /usr/local/bin/screenchange`
-    * add it to the .bash_aliases
-    * add the whole folder to your source files
-3. I would recommend to have some nice shortcuts -> add them to your .bash_aliases
+
+
+  a) add it to your `.bash_aliases` (or `.zshrc`)
+
+````
+alias screenchange="/path/to/this/repo/screenchange/screenchange"
+```   
+
+  b) create a symbolic link to it
+
+```
+sudo ln -s /path/to/this/repo/screenchange/screenchange /usr/local/bin/screenchange
+```
+
+Nice aliases
+-------------
+
+I recommend to have some nice shortcuts (e.g `.bash_aliases` or `.zshrc`)
 
 ## 
     alias monitor-off='xrandr --output VGA1 --off;xrandr --output HDMI1 --off'
