@@ -1,6 +1,13 @@
 Simplify the access to the screen settings
 ============================================
 
+```
+vga l[eft] # vga monitor is left, internal right
+hdmi r[ight] # hdmi monitor is right, internal left
+hdmi2 l # hdmi monitor is left, vga is right
+vga2 r # vga monitor is right, hdmi is left
+```
+
 ## Description
 
 If you're working on a laptop and have to change your screen configurations very often this script is for you.
@@ -34,12 +41,13 @@ Nice aliases
 
 I recommend to have some nice shortcuts (e.g `.bash_aliases` or `.zshrc`)
 
-## 
-    alias monitor-off='xrandr --output VGA1 --off;xrandr --output HDMI1 --off'
-    alias hdmi='screenchange -1 HDMI1 -2 LVDS1 -m'
-    alias vga='screenchange -1 VGA1 -2 LVDS1 -m'
-    alias hdmi2='screenchange -1 HDMI1 -2 VGA1 -m'
-    alias vga2='screenchange -1 VGA1 -2 HDMI1 -m'
+```
+alias monitor-off='xrandr --output VGA1 --off;xrandr --output HDMI1 --off'
+alias hdmi='screenchange -1 HDMI1 -2 LVDS1 -m'
+alias vga='screenchange -1 VGA1 -2 LVDS1 -m'
+alias hdmi2='screenchange -1 HDMI1 -2 VGA1 -m'
+alias vga2='screenchange -1 VGA1 -2 HDMI1 -m'
+```
 
 (2 stands for two connected monitors)
 
