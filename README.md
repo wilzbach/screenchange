@@ -2,10 +2,10 @@ Simplify the access to the screen settings
 ============================================
 
 ```
-vga l[eft] # vga monitor is left, internal right
-hdmi r[ight] # hdmi monitor is right, internal left
-hdmi2 l # hdmi monitor is left, vga is right
-vga2 r # vga monitor is right, hdmi is left
+vga l[eft]    # vga monitor is left, internal right
+hdmi r[ight]  # hdmi monitor is right, internal left
+hdmi2 l       # hdmi monitor is left, vga is right
+vga2 r        # vga monitor is right, hdmi is left
 ```
 
 ## Description
